@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/7.css">
+    <script>
+        window.onload = function() {
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oClose = document.getElementById('close');
+            var oBaidu = document.getElementById('baidu');
+            var style = oBaidu.style;
+
+
+            oBtn.onclick = function() {
+//                alert("he");
+                style.display = style.display == "block" ? "none" : "block";
+            };
+            oClose.onclick = function () {
+                style.display = "none";
+            };
+        }
+    </script>
+</head>
+<body>
+<main>
+<button>输入法</button>
+<ul id="baidu">
+    <li><a href="javascript:;">手写</a></li>
+    <li><a href="javascript:;">拼音</a> </li>
+    <li id="close"><a href="javascript:;">关闭</a> </li>
+</ul>
+</main>
+</body>
+</html>

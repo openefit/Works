@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p{margin: 6px;padding: 12px}
+        body{font-size: 12px/1.5}
+        button{margin: 10px 50px;width:50px;height: 30px;cursor: pointer}
+        .outer{margin: 10% auto 20px auto;width: 300px}
+        input{padding: 5px;margin: 5px auto;}
+        #show{clear: both;display:;width: 200px;height: 200px;background-color: #101010;margin: 20px auto;left:50%;color: #fff}
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementsByTagName('button')[0],
+                    oReset = document.getElementsByTagName('button')[1];
+            var oAttr = document.getElementById('attr'),
+                    oValue = document.getElementById('value');
+            var oShow = document.getElementById('show');
+            oBtn.onclick = function () {
+                oShow.style[oAttr.value] = oValue.value;
+            }
+            oReset.onclick = function () {
+                oShow.removeAttribute('style');
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<main>
+    <div class="outer">
+        <label>属性名：</label><input id="attr" type="text" value="background-color"><br/>
+        <label>属性值：</label><input id="value" type="text" value="blue"><br/>
+        <button>确定</button><button>重置</button>
+    </div>
+    <div id="show"><p>在上方输入框输入"属性名"及"属性值"，<br/>点击确定按钮查看效果。</p></div>
+</main>
+</body>
+</html>

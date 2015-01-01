@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>velocity</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="velocity.min.js"></script>
+    <script src="motion.min.js"></script>
+</head>
+<body>
+<div class="container logo">
+    <!--<button>test</button>-->
+    <div class="test">
+        <ul>
+            <li><img src="assests/round3.png" alt=""></li>
+            <li><img src="assests/round2-yellow.png" alt=""></li>
+        </ul>
+
+    </div>
+    <div class="msg"><p><b>V</b> elocity</p></div>
+</div>
+
+<div class="main fix-top">
+    <div class="container">
+        <pre>
+            $element.velocity(propertyMap [, duration] [, easing] [, complete])</pre>
+    </div>
+    <div class="container text-primary text-center">
+        OPTION
+    </div>
+    <div class="container">
+        <p><b class="text-primary">duration:</b> in milliseconds[e.g. 1000] or "slow","normal","fast".</p>
+        <p><b class="text-primary">easing:</b> "ease","ease-in","ease-out","ease-in-out".</p>
+        <p><b class="text-primary">queue:</b> <i>false</i> to run immediately.</p>
+        <p><b class="text-primary">begin&complete:</b><i>func()</i></p>
+        <p><b class="text-primary">progress:</b> <i>func()</i></p>
+        <pre><code>
+            $element.velocity({
+            opacity: 0
+            }, {
+            progress: function(elements(元素), percentComplete, timeRemaining, timeStart) {
+            console.log((percentComplete * 100) + "%");
+            console.log(timeRemaining + "ms remaining!");
+            }
+            });
+        </code></pre>
+        <p><b class="text-primary">mobileHA:</b> <i>true/false,</i> deafault:true</p>
+        <p><b class="text-primary">loop:</b> <i>n</i>or <i>true[infinite]</i> </p>
+        <p><b class="text-primary">delay:</b> <i>milliseconds</i> </p>
+        <p><b class="text-primary">display&visibility</b> same to CSS [empty to remove the property altogether]<i>"auto"</i></p>
+    </div>
+</div>
+
+</body>
+</html>

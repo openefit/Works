@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style></style>
+    <style>
+        *{padding: 0;margin: 0;}
+        body{font: 12px/1.5 Tahoma;}
+        .overlay{display:none;position: absolute;top:0;left:0;width: 100%;height: 100%;background-color: #000;opacity: 0.5;}
+        #win{display:none;position: absolute;width: 400px;height: 200px;top: 50%;left: 50%;margin: -102px 0 0 -202px;border: 4px solid #f90;background-color: #fff;}
+        h2{padding:5px;border-bottom:3px solid #d58512;text-align: right;background-color: #fc0;font-size: 12px;}
+        h2 span{border: 1px solid #f90;padding:0 2px;background-color: #fff;cursor: pointer;color: #f90;}
+        button{display:block;margin:10% auto;width: 80px;height: 40px;cursor: pointer;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oClose = document.getElementById('close');
+            var oOverlay = document.getElementsByClassName('overlay')[0];
+            var oWin = document.getElementById('win');
+            oBtn.onclick = function () {
+                oOverlay.style.display = "block";
+                oWin.style.display = "block";
+            };
+            oClose.onclick = function () {
+                oOverlay.style.display = "none";
+                oWin.style.display = "none";
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="overlay"></div>
+<div id="win"><h2><span id="close">×</span> </h2></div>
+<button>弹出层</button>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>函数接收参数并弹出</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            margin: 10% auto;
+
+        }
+        input {
+
+            display: block;
+            border: solid 1px #ccc;
+            margin: 10px auto;
+            padding: 3px;
+            /*background-color: #2a6496;*/
+        }
+        button{
+            display: block;
+            clear: both;
+            width: 80px;
+            height: 40px;
+            margin: 10px auto;
+            padding: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var myOut = function (a,b) {
+            alert(a.value);
+            alert(b.value)
+        };
+        window.onload = function(){
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oInput = document.getElementsByTagName("input");
+
+            oBtn.onclick = function () {
+                myOut(oInput[0], oInput[1]);
+            }
+        }
+    </script>
+</head>
+<body>
+ <main>
+     <form>
+         <input type="text" value="中国">
+         <input type="text" value="北京市">
+         <button>传参</button>
+     </form>
+ </main>
+</body>
+</html>

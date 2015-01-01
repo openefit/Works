@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>mousewheel exercise</title>
+<style rel="stylesheet">
+    * {
+        text-align: center;
+        /*color: red;*/
+    }
+
+    body {
+        margin: 0;
+    }
+    .des {
+        margin: 20px auto;
+        clear: both;
+
+    }
+    h2,p {
+        margin:  auto;
+
+    }
+    a{
+        color: darkblue;
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    .same div {
+
+        float: left;
+        width: 200px;
+        height: 200px;
+    }
+
+    #test1 {
+        background-color: palevioletred;
+
+    }
+
+    .test1 {
+        color: palevioletred;
+    }
+
+    #test2 {
+        background-color: aqua;
+    }
+
+    .test2 {
+        color: aqua;
+    }
+
+    #test3 {
+        background-color: cadetblue;
+    }
+
+    .test3 {
+        color: cadetblue;
+    }
+
+    #test4 {
+        background-color: darkgoldenrod;
+    }
+
+    .test4 {
+        color: darkgoldenrod;
+    }
+
+    .contain {
+        float: left;
+
+    }
+
+    #test8 {
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background-color: #24f143;
+    }
+
+    .test8 {
+        color: #24f143;
+    }
+
+    #test7 {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        background-color: #14a12a;
+    }
+
+    .test7 {
+        color: #14a12a;
+    }
+
+    #test6 {
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        background-color: #0f721e;
+    }
+
+    .test6 {
+        color: #0f721e;
+    }
+
+    #test5 {
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        background-color: #0a4412;
+        color: coral;
+    }
+
+    .test5 {
+        color: #0a4412;
+    }
+
+    #logger {
+        clear: both;
+        position: absolute;
+        top: 200px;
+        left: 0;
+        width: 800px;
+        height: 200px;
+        /*text-align: left;*/
+        overflow: auto;
+        z-index: 100;
+        background-color: #cad8e5;
+
+    }
+
+    #logger p {
+        margin: 0;
+        padding: 2px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+
+    }
+
+    #logger p:nth-child(even) {
+        background-color: aliceblue;
+    }
+
+    #logger p:nth-child(10n) {
+        border-bottom-color: black;
+    }
+
+    #force-scroll {
+        clear: both;
+        height: 1000px;
+
+    }
+
+    .error {
+        color: #f31d07;
+    }
+
+</style>
+<script type="text/javascript" src="jquery-2.1.1.js"></script>
+<script type="text/javascript" src="jquery.mousewheel.js"></script>
+<!--<script>-->
+<!--$(function () {-->
+<!--var loghandle = function (event, delta) {-->
+<!--var o = '', id = event.currentTarget.id || event.currentTarget.nodeName;-->
+<!--o = '#' + id + ':';-->
+
+<!--//                o += '--event.deltaX(' + event.deltaX +  ')--';-->
+<!--if(delta > 0){-->
+<!--o += 'up(' + delta + ')';-->
+<!--}else if(delta < 0){-->
+<!--o += 'down(' + delta + ')';-->
+<!--}-->
+
+<!--if(event.deltaY > 0){-->
+<!--o += 'north(' + event.deltaY + ')';-->
+<!--}else if(event.deltaY < 0){-->
+<!--o += 'south(' + event.deltaY + ')';-->
+<!--}-->
+
+<!--if(event.deltaX > 0){-->
+<!--o += 'east(' + event.deltaX + ')';-->
+<!--}else if(event.delta.X < 0){-->
+<!--o += 'west(' + event.deltaX + ')';-->
+<!--}-->
+
+<!--o += 'deltaFactor(' + event.deltaFactor + ')';-->
+
+<!--log(o,id);-->
+
+<!--}-->
+
+<!--$(document).mousewheel(function (event, delta) {-->
+<!--loghandle(event, delta);-->
+<!--});-->
+<!--$("#test1").mousewheel(function (event, delta) {-->
+<!--loghandle(event, delta);-->
+<!--});-->
+
+<!--var log = function (o,id) {-->
+<!--//                var $param;-->
+<!--$("<p></p>").text(o).addClass(id).appendTo($("#logger"));-->
+<!--//                $("#logger").append($('<p></p>').text(o).addClass(id));-->
+<!--//                $("#logger").append($('<p>' + o +'<\/p>'));-->
+<!--}-->
+<!--});-->
+<!--</script>-->
+<script>
+    $(function () {
+        var loghandle = function (event, delta) {
+            var o = '', id = event.currentTarget.id || event.currentTarget.nodeName;
+            o += '#' + id + ':';
+
+            if (delta > 0) {
+                o += "up(" + delta + ")";
+            } else if (delta < 0) {
+                o += "down" + delta + ")";
+            }
+
+            if (event.deltaY > 0) {
+                o += "north(" + event.deltaY + ")";
+            } else if (event.deltaY < 0) {
+                o += "south(" + event.deltaY + ")";
+            }
+
+            if (event.deltaX > 0) {
+                o += "east(" + event.deltaX + ")";
+            } else if (event.deltaX < 0) {
+                o += "west(" + event.deltaX + ")";
+            }
+
+            o += "--event.deltaX:" + event.deltaX;
+
+            log(o, id);
+        };
+        var log = function (msg, id) {
+
+            $('<p></p>').text(msg).addClass(id).appendTo($("#logger"));
+            $("#logger")[0].scrollTop = 99999999;
+        }
+
+        $(document).mousewheel(function (event, delta) {
+            loghandle(event, delta);
+        });
+        $("#test1").mousewheel(function (event, delta) {
+            loghandle(event, delta);
+            log("pageX:" + event.pageX + "pageY:" + event.pageY, "test1");
+        });
+        $("#test2").mousewheel(function (event, delta) {
+            loghandle(event, delta);
+            return false;
+        });
+        $("#test3").hover(function () {
+            log("text:mouseover", "test3")
+        }, function () {
+            log("text:mouseout", "test3")
+        })
+                .mousewheel(function () {
+                    log("test3:I should nerver out,ERROR OCCURED", "test3")
+                })
+                .unmousewheel();
+        var testRemoval = function () {
+            log("test4:I shoud not be here, Error Occured", "test4")
+        }
+//            $("test4").mousewheel(
+//                    function(event,delta){
+//                        loghandle(event,delta);
+//                        return false;
+//                    })
+//                    .mousewheel(testRemoval())
+//                    .mousewheel(function(event,delta){
+//                        loghandle(event,delta);
+//                        return false;
+//                    })
+//                    .unmousewheel(testRemoval());
+
+        //testRemoval不能带（），会导致函数立即被调用
+        $("#test4").mousewheel(function (event, delta) {
+            loghandle(event, delta);
+            return false;
+        }).mousewheel(testRemoval)
+                .mousewheel(function (event, delta) {
+                    loghandle(event, delta);
+                    return false;
+                }).unmousewheel(testRemoval);
+
+        $("#test5").mousewheel(function (event, delta) {
+            loghandle(event, delta);
+            event.stopPropagation();
+            event.preventDefault();
+        });
+        $("#test6").mousewheel(function (event, delta) {
+            loghandle(event, delta);
+            event.stopPropagation();
+            event.preventDefault();
+        });
+        $("#test7").mousewheel(function (event, delta) {
+            loghandle(event, delta);
+            event.preventDefault();
+        });
+        $("#test8").mousewheel(function (event, delta) {
+            loghandle(event, delta);
+            event.stopPropagation();
+            event.preventDefault();
+            log("test8:eliminated", "error");
+            $(event.currentTarget).hide("slow");
+        });
+//                log(event.currentTarget,"error");
+//               $("#test8").animate({width:'400px',height:'400px',background-color: '#f00',},"slow",easing,).hide("slow");
+//
+
+
+    });
+</script>
+</head>
+<body>
+<div class="main">
+    <div class="container">
+        <div class="same">
+            <div id="test1">test1</div>
+            <div id="test2">test2</div>
+            <div id="test3">test3</div>
+            <div id="test4">test4</div>
+        </div>
+        <div class="contain">
+            <div id="test5">test5<br/><br/><br/>
+
+                <div id="test6">test6<br/><br/>
+
+                    <div id="test7">test7<br/><br/>
+
+                        <div id="test8">test8
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="logger">
+
+    </div>
+
+    <div class="des">
+        <h2>
+            滑动滚轮，观察效果
+        </h2>
+        <p>
+            模仿自》<a href="https://github.com/jquery/jquery-mousewheel" target="_blank" > mousewheel.js</a>例子
+        </p>
+
+    </div>
+    <div id="force-scroll"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>body{text-align:center;font:700 30px/1.5 arial;}</style>
+    <script>
+        window.onload = function () {
+            var  oBody = document.getElementsByTagName('body')[0];
+            var i = 0;
+            setInterval(countNumber, 1000);
+            countNumber();
+            function countNumber(){
+                // from 0
+//                oBody.innerHTML = i;
+//                i++;
+                // from 1
+                oBody.innerHTML = ++i;
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

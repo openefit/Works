@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        pre{color:green;padding:10px 15px;background:#f0f0f0;border:1px dotted #333;font:12px/1.5 Courier New;}
+        span{color:#999;}
+    </style>
+    <script>
+        window.onload = function() {
+        alert(
+                "typeof 12345 -> " + typeof 12345 + "\n\n"
+        +'typeof "abc" -> ' + typeof "abc" + "\n\ntypeof document -> "+typeof document
+        );
+        }
+    </script>
+</head>
+<body>
+<pre>
+&lt;script type="text/javascript"&gt;
+    alert(typeof 12345);	<span>//-&gt;number</span>
+    alert(typeof "abc");	<span>//-&gt;string</span>
+    alert(typeof document);	<span>//-&gt;object</span>
+&lt;/script&gt;
+</pre>
+
+</body>
+</html>

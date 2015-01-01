@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0}
+        ul,li{list-style-type: none}
+        ul {width: 700px;overflow: hidden;zoom: 1;border: solid 1px #333;margin: 10% auto;padding:0 0 10px 10px}
+        ul li{float:left;width: 128px;height: 128px;border: solid 1px #ccc;margin: 10px 10px 0 0;}
+        ul li img{float: left;opacity: 0.3;cursor: crosshair;}
+        ul li .current{opacity: 1}
+    </style>
+    <script>
+        window.onload = function(){
+            var oImg = document.getElementsByTagName('img');
+            for(var i = 0; i < oImg.length; i++){
+                oImg[i].onmouseover = function () {
+                    this.className += "current";
+                }
+                oImg[i].onmouseout = function(){
+                    (this.className -= "current") || (this.className = '')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li><img src="img/12/1.jpg"></li>
+    <li><img src="img/12/2.jpg"></li>
+    <li><img src="img/12/3.jpg"></li>
+    <li><img src="img/12/4.jpg"></li>
+    <li><img src="img/12/5.jpg"></li>
+    <li><img src="img/12/6.jpg"></li>
+    <li><img src="img/12/7.jpg"></li>
+    <li><img src="img/12/8.jpg"></li>
+    <li><img src="img/12/9.jpg"></li>
+    <li><img src="img/12/10.jpg"></li>
+</ul>
+</body>
+</html>

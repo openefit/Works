@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset=”utf-8″ />
+
+    <title>css3 animation实现DIV旋转动画效果</title>
+
+    <style>
+
+        .aimateStyle{
+
+            border:1px solid black;
+
+            width:300px;
+
+            height:300px;
+
+            background:#abcdef;
+
+            position:absolute;
+
+            top:150px;
+
+            left:200px;
+
+        }
+
+        .active{
+
+            border:1px solid black;
+
+            width:200px;
+
+            height:150px;
+
+            background:#f9c;
+
+        }
+
+        @-webkit-keyframes aixuexi{
+
+            0%{-webkit-transform:rotateY(0deg);opacity:0;}
+
+            50%{-webkit-transform:rotateY(90deg);opacity:1;}
+
+            70%{-webkit-transform:rotateY(180deg);opacity:1;}
+
+            100%{-webkit-transform:rotateY(270deg);opacity:0;}
+
+        }
+
+        #animations{
+
+            border:1px solid black;
+
+            width:200px;
+
+            height:150px;
+
+            background:#f9c;
+
+            -webkit-animation-name:aixuexi;
+
+            -webkit-animation-duration: 5000ms;
+
+            -webkit-animation-iteration-count: infinite;
+
+            -webkit-animation-timing-function: linear;
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="aimateStyle">
+
+    <div id="animations">
+
+        animations 动画效果
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+

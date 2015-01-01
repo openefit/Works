@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input{display:block;margin:10% auto;width: 80px;height: 40px;cursor: pointer}
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementsByTagName("input")[0];
+            var oVal ;
+            oBtn.onclick = function(){
+                oVal = parseInt(oBtn.value) + 1;
+                this.value = oVal;
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="0">
+</body>
+</html>

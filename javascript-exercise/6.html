@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            margin: 10% auto;
+            width: 200px;
+        }
+        input {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        #tips {
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #ffefa4;
+            border: 1px solid #f90;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oLabel = document.getElementsByTagName("label")[0];
+            var oTips = document.getElementById("tips");
+
+            oLabel.onmouseover = function (){
+                oTips.style.display = "block";
+            }
+            oLabel.onmouseout = function() {
+                oTips.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+<main>
+    <label><input type="checkbox"/>两周内自动登录</label>
+    <div id="tips">为了您的安全，请不要在网吧或公共电脑上使用此功能</div>
+</main>
+</body>
+</html>

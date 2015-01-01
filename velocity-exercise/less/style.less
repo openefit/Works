@@ -1,0 +1,72 @@
+*{
+  padding: 0;
+  margin: 0;
+//  overflow: hidden;
+}
+body{
+  font-size: 18px;
+  background-color: grey;
+  background-image: url("../assests/triangular.png");
+}
+ul li {
+  list-style-type: none;
+}
+
+//.logo{
+//  background-color: azure;
+//}
+ .test {
+  position: absolute;
+   display: block;
+   top: 40px;
+   left: 22px;
+//   margin: 20px;
+//  background-color:aqua;
+  width: 100px;
+  height: 100px;
+ }
+img {
+  width: 100px;
+  height: 100px;
+  &:nth-of-type(1){
+
+    position: absolute;
+  }
+}
+@blue-basic: #2dc9ef;
+.msg{
+  position: absolute;
+  display: block;
+//  background-color: darkblue;
+
+
+  top: 35px;
+  left: 50px;
+//  width: 100px;
+  font-size: 60px;
+//  line-height: 60px;
+//  margin: 200px;
+//  height: 100px;
+//  z-index: 999;
+  b{
+    color: cornflowerblue;
+//    text-shadow: darkblue ;
+//    background-color: beige;
+    text-shadow: 0 0 32px darken(beige,50%);
+
+  }
+  p{
+    color: @blue-basic;
+    display: block;
+  }
+}
+.fix-top{
+  margin-top: 140px;
+//  background-color: aliceblue;
+//  width: 500px;
+//  height: 300px;
+
+}
+.text-primary{
+  color: darken(#fcf8e3,60%);
+}

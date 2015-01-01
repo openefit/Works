@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用循环将三个div变成红色</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        main {
+            margin: 10% auto;
+        }
+        .outer {
+            margin: 5px auto;
+            width:510px;
+
+        }
+        .outer div {
+            float: left;
+
+            margin: 10px 10px;
+            width: 150px;
+            height: 150px;
+            background-color: #2a6496;
+
+        }
+        .outer div .on {
+            background-color: #f00;
+        }
+        button {
+            display: block;
+            margin: 40px auto;
+            text-align: center;
+            width: 80px;
+            height: 40px;
+            clear: both;
+
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oEle = document.getElementsByClassName("outer")[0].getElementsByTagName("div");
+
+            oBtn.onclick = function(){
+                for(var i = 0;i < oEle.length; i++){
+                    oEle[i].style.backgroundColor = "#F00";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<main>
+    <div class="outer">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <button>点我变色</button>
+</main>
+</body>
+</html>
